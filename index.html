@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumTrade Nexus | Next-Gen Trading Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        darker: '#020617'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker font-poppins text-gray-200 min-h-screen">
+    <!-- Header Component -->
+    <custom-header></custom-header>
+<main class="container mx-auto px-4 py-8">
+        <!-- Market Ticker -->
+        <div class="bg-dark rounded-lg p-4 mb-6 overflow-hidden">
+            <div class="flex space-x-8 animate-marquee">
+                <div class="flex items-center">
+                    <span class="text-primary">BTC/USD</span>
+                    <span class="ml-2 text-green-400">$42,380 <i data-feather="arrow-up" class="w-4 h-4 inline"></i> 2.4%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-primary">ETH/USD</span>
+                    <span class="ml-2 text-red-400">$2,380 <i data-feather="arrow-down" class="w-4 h-4 inline"></i> 1.2%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-primary">EUR/USD</span>
+                    <span class="ml-2 text-green-400">1.0934 <i data-feather="arrow-up" class="w-4 h-4 inline"></i> 0.3%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-primary">GOLD</span>
+                    <span class="ml-2 text-green-400">$1,980 <i data-feather="arrow-up" class="w-4 h-4 inline"></i> 0.8%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-primary">SPX500</span>
+                    <span class="ml-2 text-red-400">4,892 <i data-feather="arrow-down" class="w-4 h-4 inline"></i> 0.5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Balance Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-dark rounded-xl p-6 border-l-4 border-primary">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-400">Main Balance</p>
+                        <h3 class="text-2xl font-semibold mt-1">$24,892.45</h3>
+                    </div>
+                    <i data-feather="credit-card" class="text-primary"></i>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-400 text-sm">+5.2% <i data-feather="arrow-up" class="w-3 h-3 inline"></i></span>
+                    <div class="ml-auto flex space-x-2">
+                        <button class="bg-primary hover:bg-primary/80 text-white px-3 py-1 rounded-lg text-sm">Deposit</button>
+                        <button class="bg-secondary hover:bg-secondary/80 text-white px-3 py-1 rounded-lg text-sm">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark rounded-xl p-6 border-l-4 border-secondary">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-400">Trading Balance</p>
+                        <h3 class="text-2xl font-semibold mt-1">$12,450.20</h3>
+                    </div>
+                    <i data-feather="trending-up" class="text-secondary"></i>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-400 text-sm">+8.7% <i data-feather="arrow-up" class="w-3 h-3 inline"></i></span>
+                    <div class="ml-auto flex space-x-2">
+                        <button class="bg-primary hover:bg-primary/80 text-white px-3 py-1 rounded-lg text-sm">Transfer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark rounded-xl p-6 border-l-4 border-pink-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-400">AI Trading</p>
+                        <h3 class="text-2xl font-semibold mt-1">$8,120.75</h3>
+                    </div>
+                    <i data-feather="cpu" class="text-pink-500"></i>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-400 text-sm">+14.3% <i data-feather="arrow-up" class="w-3 h-3 inline"></i></span>
+                    <div class="ml-auto flex space-x-2">
+                        <button class="bg-primary hover:bg-primary/80 text-white px-3 py-1 rounded-lg text-sm">New Bot</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark rounded-xl p-6 border-l-4 border-green-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-400">Mining Balance</p>
+                        <h3 class="text-2xl font-semibold mt-1">$3,845.30</h3>
+                    </div>
+                    <i data-feather="hard-drive" class="text-green-500"></i>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-400 text-sm">+2.1% <i data-feather="arrow-up" class="w-3 h-3 inline"></i></span>
+                    <div class="ml-auto flex space-x-2">
+                        <button class="bg-primary hover:bg-primary/80 text-white px-3 py-1 rounded-lg text-sm">Invest</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div class="lg:col-span-2 bg-dark rounded-xl p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold">Performance Overview</h2>
+                    <div class="flex space-x-2">
+                        <button class="bg-primary text-white px-3 py-1 rounded-lg text-sm">Today</button>
+                        <button class="bg-dark border border-gray-700 px-3 py-1 rounded-lg text-sm">Week</button>
+                        <button class="bg-dark border border-gray-700 px-3 py-1 rounded-lg text-sm">Month</button>
+                        <button class="bg-dark border border-gray-700 px-3 py-1 rounded-lg text-sm">Custom</button>
+                    </div>
+                </div>
+                <!-- Chart Placeholder -->
+                <div class="bg-darker rounded-lg h-64 flex items-center justify-center">
+                    <p class="text-gray-500">Performance chart visualization</p>
+                </div>
+            </div>
+            
+            <div class="bg-dark rounded-xl p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold">Portfolio Allocation</h2>
+                    <i data-feather="pie-chart" class="text-primary"></i>
+                </div>
+                <!-- Pie Chart Placeholder -->
+                <div class="bg-darker rounded-lg h-64 flex items-center justify-center">
+                    <p class="text-gray-500">Portfolio allocation chart</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Bots Section -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold">AI Trading Bots</h2>
+                <a href="#" class="text-primary hover:underline">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-dark rounded-xl p-6 border border-gray-800 hover:border-primary transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold">Scalping Pro</h3>
+                            <p class="text-gray-400 text-sm mt-1">Crypto/USD Pairs</p>
+                        </div>
+                        <span class="bg-green-900/50 text-green-400 px-2 py-1 rounded text-xs">Low Risk</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-2xl text-primary font-bold">24.7% <span class="text-sm text-green-400">ROI</span></p>
+                        <div class="h-1 w-full bg-gray-800 rounded-full mt-2">
+                            <div class="h-1 bg-green-500 rounded-full" style="width: 75%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Success Rate: 87%</p>
+                    </div>
+                    <button class="w-full mt-6 bg-primary hover:bg-primary/80 text-white py-2 rounded-lg">Run Bot</button>
+                </div>
+                
+                <div class="bg-dark rounded-xl p-6 border border-gray-800 hover:border-secondary transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold">Trend Master</h3>
+                            <p class="text-gray-400 text-sm mt-1">Forex & Indices</p>
+                        </div>
+                        <span class="bg-yellow-900/50 text-yellow-400 px-2 py-1 rounded text-xs">Medium Risk</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-2xl text-secondary font-bold">18.3% <span class="text-sm text-green-400">ROI</span></p>
+                        <div class="h-1 w-full bg-gray-800 rounded-full mt-2">
+                            <div class="h-1 bg-yellow-500 rounded-full" style="width: 65%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Success Rate: 72%</p>
+                    </div>
+                    <button class="w-full mt-6 bg-secondary hover:bg-secondary/80 text-white py-2 rounded-lg">Run Bot</button>
+                </div>
+                
+                <div class="bg-dark rounded-xl p-6 border border-gray-800 hover:border-pink-500 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold">Arbitrage AI</h3>
+                            <p class="text-gray-400 text-sm mt-1">Multi-Exchange</p>
+                        </div>
+                        <span class="bg-red-900/50 text-red-400 px-2 py-1 rounded text-xs">High Risk</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-2xl text-pink-500 font-bold">32.5% <span class="text-sm text-green-400">ROI</span></p>
+                        <div class="h-1 w-full bg-gray-800 rounded-full mt-2">
+                            <div class="h-1 bg-red-500 rounded-full" style="width: 55%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Success Rate: 63%</p>
+                    </div>
+                    <button class="w-full mt-6 bg-pink-500 hover:bg-pink-500/80 text-white py-2 rounded-lg">Run Bot</button>
+                </div>
+                
+                <div class="bg-dark rounded-xl p-6 border border-gray-800 hover:border-green-500 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold">Stable Yield</h3>
+                            <p class="text-gray-400 text-sm mt-1">Stablecoins</p>
+                        </div>
+                        <span class="bg-green-900/50 text-green-400 px-2 py-1 rounded text-xs">Low Risk</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-2xl text-green-500 font-bold">9.8% <span class="text-sm text-green-400">ROI</span></p>
+                        <div class="h-1 w-full bg-gray-800 rounded-full mt-2">
+                            <div class="h-1 bg-green-500 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Success Rate: 92%</p>
+                    </div>
+                    <button class="w-full mt-6 bg-green-500 hover:bg-green-500/80 text-white py-2 rounded-lg">Run Bot</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mining Section -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold">Mining Operations</h2>
+                <a href="#" class="text-primary hover:underline">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-dark rounded-xl p-6 lg:col-span-2">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="font-semibold">Your Mining Stats</h3>
+                            <p class="text-gray-400 text-sm mt-1">Active since 12 Jan 2023</p>
+                        </div>
+                        <span class="bg-green-900/50 text-green-400 px-2 py-1 rounded text-xs">Online</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-darker rounded-lg p-4">
+                            <p class="text-gray-400 text-sm">Hash Rate</p>
+                            <p class="text-lg font-semibold mt-1">245 TH/s</p>
+                        </div>
+                        <div class="bg-darker rounded-lg p-4">
+                            <p class="text-gray-400 text-sm">Uptime</p>
+                            <p class="text-lg font-semibold mt-1">99.8%</p>
+                        </div>
+                        <div class="bg-darker rounded-lg p-4">
+                            <p class="text-gray-400 text-sm">Rewards</p>
+                            <p class="text-lg font-semibold mt-1">0.0024 BTC</p>
+                        </div>
+                        <div class="bg-darker rounded-lg p-4">
+                            <p class="text-gray-400 text-sm">Power Cost</p>
+                            <p class="text-lg font-semibold mt-1">$1.42/day</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex space-x-3">
+                        <button class="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg">Buy Mining Machine</button>
+                        <button class="bg-secondary hover:bg-secondary/80 text-white px-4 py-2 rounded-lg">Invest in Pool</button>
+                    </div>
+                </div>
+                
+                <div class="bg-dark rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold">Profitability Calculator</h3>
+                        <i data-feather="calculator" class="text-primary"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-gray-400 text-sm">Hash Rate (TH/s)</label>
+                            <input type="range" min="10" max="500" value="100" class="w-full mt-1">
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>10</span>
+                                <span>500</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-gray-400 text-sm">Power Cost ($/kWh)</label>
+                            <input type="range" min="0.1" max="0.5" value="0.15" step="0.01" class="w-full mt-1">
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>0.1</span>
+                                <span>0.5</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-400">Estimated Monthly Profit</p>
+                            <p class="text-2xl text-primary font-bold mt-1">$285 - $320</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Feed Section -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold">Market Feed</h2>
+                <div class="flex space-x-2">
+                    <button class="bg-primary text-white px-3 py-1 rounded-lg text-sm">Top Traders</button>
+                    <button class="bg-dark border border-gray-700 px-3 py-1 rounded-lg text-sm">Trending</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-dark rounded-xl p-6 lg:col-span-2">
+                    <div class="flex items-start space-x-4 mb-4">
+                        <div class="bg-darker p-2 rounded-full">
+                            <i data-feather="user" class="text-primary"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-semibold">CryptoKing42</h4>
+                                <span class="text-xs text-gray-400">2h ago</span>
+                            </div>
+                            <p class="mt-1">Just entered a long position on BTC/USD at $42,150 with 5x leverage. The weekly chart shows strong support at $41,800 and RSI is oversold. Target $44,000.</p>
+                            <div class="flex items-center mt-3 space-x-4">
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="thumbs-up" class="w-4 h-4 mr-1"></i> 42
+                                </div>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="message-square" class="w-4 h-4 mr-1"></i> 8
+                                </div>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="repeat" class="w-4 h-4 mr-1"></i> 3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 pt-4 border-t border-gray-800">
+                        <div class="bg-darker p-2 rounded-full">
+                            <i data-feather="user" class="text-secondary"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-semibold">ForexQueen</h4>
+                                <span class="text-xs text-gray-400">4h ago</span>
+                            </div>
+                            <p class="mt-1">EUR/USD approaching key resistance at 1.0950. If it breaks with volume, next target is 1.1020. Otherwise expect pullback to 1.0880 support.</p>
+                            <div class="flex items-center mt-3 space-x-4">
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="thumbs-up" class="w-4 h-4 mr-1"></i> 28
+                                </div>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="message-square" class="w-4 h-4 mr-1"></i> 5
+                                </div>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i data-feather="repeat" class="w-4 h-4 mr-1"></i> 2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 pt-4 border-t border-gray-800">
+                        <div class="flex items-center space-x-2">
+                            <div class="bg-darker p-2 rounded-full">
+                                <i data-feather="user" class="text-gray-400"></i>
+                            </div>
+                            <input type="text" placeholder="Post your trade idea..." class="bg-darker border-0 flex-1 rounded-lg px-4 py-2 focus:ring-1 focus:ring-primary">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark rounded-xl p-6">
+                    <h3 class="font-semibold mb-4">Top Traders</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-darker p-2 rounded-full">
+                                <i data-feather="user" class="text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-medium">BitcoinBandit</h4>
+                                <p class="text-xs text-gray-400">ROI: 124.5% | Risk: Medium</p>
+                            </div>
+                            <button class="text-xs bg-primary/20 text-primary px-2 py-1 rounded hover:bg-primary/30">Follow</button>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-darker p-2 rounded-full">
+                                <i data-feather="user" class="text-secondary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-medium">AltcoinAlchemist</h4>
+                                <p class="text-xs text-gray-400">ROI: 98.7% | Risk: High</p>
+                            </div>
+                            <button class="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded hover:bg-secondary/30">Follow</button>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-darker p-2 rounded-full">
+                                <i data-feather="user" class="text-green-500"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-medium">StableStaker</h4>
+                                <p class="text-xs text-gray-400">ROI: 45.2% | Risk: Low</p>
+                            </div>
+                            <button class="text-xs bg-green-500/20 text-green-500 px-2 py-1 rounded hover:bg-green-500/30">Follow</button>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-darker p-2 rounded-full">
+                                <i data-feather="user" class="text-yellow-500"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-medium">ForexMaster</h4>
+                                <p class="text-xs text-gray-400">ROI: 76.3% | Risk: Medium</p>
+                            </div>
+                            <button class="text-xs bg-yellow-500/20 text-yellow-500 px-2 py-1 rounded hover:bg-yellow-500/30">Follow</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-800">
+                        <h3 class="font-semibold mb-3">Trending Topics</h3>
+                        <div class="space-y-2">
+                            <a href="#" class="block text-primary hover:underline">#BitcoinHalving2024</a>
+                            <a href="#" class="block text-primary hover:underline">#EthereumUpgrade</a>
+                            <a href="#" class="block text-primary hover:underline">#FedRateDecision</a>
+                            <a href="#" class="block text-primary hover:underline">#AITrading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="bg-dark rounded-xl p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold">Security & Trust</h2>
+                <i data-feather="shield" class="text-primary"></i>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-darker rounded-lg p-4 flex items-start space-x-3">
+                    <div class="bg-primary/10 p-2 rounded-full">
+                        <i data-feather="check-circle" class="text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">KYC/AML Compliant</h3>
+                        <p class="text-sm text-gray-400 mt-1">Verified identity protection</p>
+                    </div>
+                </div>
+                
+                <div class="bg-darker rounded-lg p-4 flex items-start space-x-3">
+                    <div class="bg-green-500/10 p-2 rounded-full">
+                        <i data-feather="lock" class="text-green-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Cold Wallet Custody</h3>
+                        <p class="text-sm text-gray-400 mt-1">95% funds offline</p>
+                    </div>
+                </div>
+                
+                <div class="bg-darker rounded-lg p-4 flex items-start space-x-3">
+                    <div class="bg-blue-500/10 p-2 rounded-full">
+                        <i data-feather="umbrella" class="text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Insurance Protection</h3>
+                        <p class="text-sm text-gray-400 mt-1">$250M coverage</p>
+                    </div>
+                </div>
+                
+                <div class="bg-darker rounded-lg p-4 flex items-start space-x-3">
+                    <div class="bg-purple-500/10 p-2 rounded-full">
+                        <i data-feather="eye" class="text-purple-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Real-Time Auditing</h3>
+                        <p class="text-sm text-gray-400 mt-1">Transparent reserves</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Component -->
+    <custom-footer></custom-footer>
+
+    <!-- Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+
+</body>
+</html>
